@@ -758,7 +758,9 @@ Timestamp             Name      Total
 
 2. Realizar el escaneo del codigo de terraform utilizando TfSec o Trivy dentro del Github Action. (2ptos)
    
-![Trivy](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u3-01-MarceloCuadros/blob/main/trivy.png)
+![Trivy1](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u3-01-MarceloCuadros/blob/main/trivy1.png)
+
+![Trivy2](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u3-01-MarceloCuadros/blob/main/trivy2.png)
    
 3. En la aplicación completar con las demas funcionalidades, de crear, actualizar y eliminar (4ptos)
 4. Realizar el escaneo de vulnerabilidad con SonarCloud y Semgrep dentro del Github Action correspondiente. (2ptos)
