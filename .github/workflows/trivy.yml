@@ -27,4 +27,11 @@ jobs:
           trivy fs --severity HIGH,CRITICAL --exit-code 1 --no-progress .
 
       - name: Upload Trivy scan results as an artifact
-        
+        uses: actions/upload-artifact@v3
+        with:
+          name: trivy-scan-results
+          path: trivy-report.json
+          
+      - name: Display Trivy results
+        run: |
+          cat trivy-report.json
