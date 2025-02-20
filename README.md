@@ -678,7 +678,7 @@ swa deploy ./publish/wwwroot -n upt-swa-XXX --env production
 
 ![Diagrama de Infraestructura](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u3-01-MarceloCuadros/blob/main/lab_02.png)
 
-<details><summary>Click to expand: Reporte de metricas</summary>
+<details><summary>Reporte de Metricas: click aqui</summary>
 
 ```Yaml
 PS C:\Users\MARCELO\Desktop\U3_LAB4\lab-2024-rec-si982-u3-01-MarceloCuadros\src\ShortenApp> az monitor metrics list --resource "/subscriptions/a451ad28-7d22-4f6b-ba2f-e69e490790b4/resourceGroups/upt-arg-206/providers/Microsoft.Web/sites/upt-afn-206" --metrics "Requests" --output table
