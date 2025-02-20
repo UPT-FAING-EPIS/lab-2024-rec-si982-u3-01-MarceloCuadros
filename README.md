@@ -675,6 +675,74 @@ swa deploy ./publish/wwwroot -n upt-swa-XXX --env production
 ## ACTIVIDADES ENCARGADAS
 
 1. Generar y subir el diagrama de infraestructura al repositorio como lab_02.png y el reporte de metricas. (2ptos)
+5. En el Visual Studio Code, crear la carpeta .github/workflows en la raiz del proyecto, seguidamente crear el archivo deploy.yml con el siguiente contenido
+<details><summary>Click to expand: Reporte de metricas</summary>
+
+```Yaml
+PS C:\Users\MARCELO\Desktop\U3_LAB4\lab-2024-rec-si982-u3-01-MarceloCuadros\src\ShortenApp> az monitor metrics list --resource "/subscriptions/a451ad28-7d22-4f6b-ba2f-e69e490790b4/resourceGroups/upt-arg-206/providers/Microsoft.Web/sites/upt-afn-206" --metrics "Requests" --output table
+Timestamp             Name      Total
+--------------------  --------  -------
+2025-02-20T16:24:00Z  Requests  0.0
+2025-02-20T16:25:00Z  Requests  0.0
+2025-02-20T16:26:00Z  Requests  0.0
+2025-02-20T16:27:00Z  Requests  0.0
+2025-02-20T16:28:00Z  Requests  0.0
+2025-02-20T16:29:00Z  Requests  0.0
+2025-02-20T16:30:00Z  Requests  0.0
+2025-02-20T16:31:00Z  Requests  0.0
+2025-02-20T16:32:00Z  Requests  0.0
+2025-02-20T16:33:00Z  Requests  0.0
+2025-02-20T16:34:00Z  Requests  0.0
+2025-02-20T16:35:00Z  Requests  0.0
+2025-02-20T16:36:00Z  Requests  0.0
+2025-02-20T16:37:00Z  Requests  0.0
+2025-02-20T16:38:00Z  Requests  0.0
+2025-02-20T16:39:00Z  Requests  0.0
+2025-02-20T16:40:00Z  Requests  0.0
+2025-02-20T16:41:00Z  Requests  0.0
+2025-02-20T16:42:00Z  Requests  0.0
+2025-02-20T16:43:00Z  Requests  0.0
+2025-02-20T16:44:00Z  Requests  0.0
+2025-02-20T16:45:00Z  Requests  0.0
+2025-02-20T16:46:00Z  Requests  0.0
+2025-02-20T16:47:00Z  Requests  0.0
+2025-02-20T16:48:00Z  Requests  0.0
+2025-02-20T16:49:00Z  Requests  0.0
+2025-02-20T16:50:00Z  Requests  0.0
+2025-02-20T16:51:00Z  Requests  0.0
+2025-02-20T16:52:00Z  Requests  0.0
+2025-02-20T16:53:00Z  Requests  0.0
+2025-02-20T16:54:00Z  Requests  0.0
+2025-02-20T16:55:00Z  Requests  0.0
+2025-02-20T16:56:00Z  Requests  0.0
+2025-02-20T16:57:00Z  Requests  0.0
+2025-02-20T16:58:00Z  Requests  0.0
+2025-02-20T16:59:00Z  Requests  0.0
+2025-02-20T17:00:00Z  Requests  0.0
+2025-02-20T17:01:00Z  Requests  0.0
+2025-02-20T17:02:00Z  Requests  0.0
+2025-02-20T17:03:00Z  Requests  0.0
+2025-02-20T17:04:00Z  Requests  0.0
+2025-02-20T17:05:00Z  Requests  0.0
+2025-02-20T17:06:00Z  Requests  0.0
+2025-02-20T17:07:00Z  Requests  0.0
+2025-02-20T17:08:00Z  Requests  0.0
+2025-02-20T17:09:00Z  Requests  0.0
+2025-02-20T17:10:00Z  Requests  0.0
+2025-02-20T17:11:00Z  Requests  0.0
+2025-02-20T17:12:00Z  Requests  0.0
+2025-02-20T17:13:00Z  Requests  0.0
+2025-02-20T17:14:00Z  Requests  0.0
+2025-02-20T17:15:00Z  Requests  0.0
+2025-02-20T17:16:00Z  Requests  0.0
+2025-02-20T17:17:00Z  Requests  0.0
+2025-02-20T17:18:00Z  Requests  0.0
+2025-02-20T17:19:00Z  Requests  0.0
+2025-02-20T17:20:00Z  Requests  0.0
+2025-02-20T17:21:00Z  Requests  0.0
+2025-02-20T17:22:00Z  Requests  0.0
+2025-02-20T17:23:00Z  Requests  0.0
+
 2. Realizar el escaneo del codigo de terraform utilizando TfSec o Trivy dentro del Github Action. (2ptos)
 3. En la aplicación completar con las demas funcionalidades, de crear, actualizar y eliminar (4ptos)
 4. Realizar el escaneo de vulnerabilidad con SonarCloud y Semgrep dentro del Github Action correspondiente. (2ptos)
