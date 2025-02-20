@@ -31,9 +31,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install Semgrep (latest version)
+      - name: Install Semgrep via pip
         run: |
-          curl -s https://semgrep.dev/install | bash
+          python3 -m pip install --upgrade pip
+          pip install semgrep
 
       - name: Run Semgrep with verbose output
         run: |
