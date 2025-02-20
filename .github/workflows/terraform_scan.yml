@@ -15,6 +15,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'adoptopenjdk'
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v1
         env:
@@ -26,11 +32,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install Semgrep via pip
+      - name: Install Semgrep
         run: |
-          python3 -m pip install --upgrade pip
-          pip install semgrep
+          curl -sSL https://semgrep.dev/install | bash
+          export PATH=$PATH:/home/runner/.local/bin
 
       - name: Run Semgrep scan
         run: |
-          semgrep --config="auto" --verbose --strict
+          semgrep --config=auto --verbose --max-files 1000 --strict
+
