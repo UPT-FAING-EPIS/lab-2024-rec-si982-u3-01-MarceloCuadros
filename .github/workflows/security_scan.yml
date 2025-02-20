@@ -10,12 +10,12 @@ on:
 
 jobs:
   sonarcloud_scan:
-    runs-on: ubuntu-latest  # Usar una imagen que tenga Java 17 por defecto
+    runs-on: ubuntu-latest
     steps:
       - name: Set up JDK 17
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v3
         with:
-          java-version: '17'  # Especificar la versión de Java correcta
+          java-version: '17'
 
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -31,9 +31,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Install Semgrep (latest version)
+        run: |
+          curl -s https://semgrep.dev/install | bash
+
       - name: Run Semgrep
         uses: returntocorp/semgrep-action@v1
         with:
-          config: "auto"  # Usar la configuración automática
+          config: "auto"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
+      - name: Run Semgrep with verbose output (to view skipped files)
+        run: |
+          semgrep --config="auto" --verbose
