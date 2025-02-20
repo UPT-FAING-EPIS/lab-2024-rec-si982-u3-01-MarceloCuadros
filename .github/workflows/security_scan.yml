@@ -29,4 +29,6 @@ jobs:
       - name: Run Semgrep
         uses: returntocorp/semgrep-action@v1
         with:
-          config: "p/default"
+          config: "auto"  # Usar la configuración automática
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

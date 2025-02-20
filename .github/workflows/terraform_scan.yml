@@ -1,26 +1,34 @@
-name: Terraform Security Scan
+name: Code Security Scan
 
 on:
   push:
-    paths:
-      - '**.tf'
+    branches:
+      - main
   pull_request:
-    paths:
-      - '**.tf'
+    branches:
+      - main
 
 jobs:
-  security_scan:
+  sonarcloud_scan:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install TfSec
-        run: |
-          curl -fsSL https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v1
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-      - name: Verify TfSec installation
-        run: tfsec --version
+  semgrep_scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Run TfSec scan
-        run: tfsec .
+      - name: Run Semgrep
+        uses: returntocorp/semgrep-action@v1
+        with:
+          config: "auto"  # Usar la configuración automática
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
