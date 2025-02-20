@@ -12,11 +12,6 @@ jobs:
   sonarcloud_scan:
     runs-on: ubuntu-latest
     steps:
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -36,6 +31,6 @@ jobs:
           python3 -m pip install --upgrade pip
           pip install semgrep
 
-      - name: Run Semgrep with verbose output
+      - name: Run Semgrep scan
         run: |
-          semgrep --config="auto" --verbose --max-files 1000 --strict
+          semgrep --config="auto" --verbose --strict
