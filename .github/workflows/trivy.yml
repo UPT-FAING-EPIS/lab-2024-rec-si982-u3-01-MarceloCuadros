@@ -1,4 +1,4 @@
-name: "Security Scan with Trivy"
+name: Terraform Security Scan with Trivy
 
 on:
   push:
@@ -9,22 +9,25 @@ on:
       - main
 
 jobs:
-  trivy-scan:
+  terraform-scan:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out the code
+    - name: Check out code
       uses: actions/checkout@v2
 
-    - name: Run Trivy scan
+    - name: Install Trivy
       run: |
-        trivy image --format json --output trivy-report.json <image_name>
+        curl -sfL https://github.com/aquasecurity/trivy/releases/download/v0.29.1/trivy_0.29.1_Linux-64bit.tar.gz -o trivy.tar.gz
+        tar xzf trivy.tar.gz
+        sudo mv trivy /usr/local/bin/
 
-    - name: List files
-      run: ls -la  # Esto ayudará a verificar si el archivo está presente
+    - name: Run Trivy scan on Terraform files
+      run: |
+        trivy fs --format json --output trivy-report.json .
 
-    - name: Upload Trivy scan results as an artifact
-      uses: actions/upload-artifact@v4
+    - name: Upload Trivy scan results
+      uses: actions/upload-artifact@v2
       with:
         name: trivy-scan-results
         path: trivy-report.json
