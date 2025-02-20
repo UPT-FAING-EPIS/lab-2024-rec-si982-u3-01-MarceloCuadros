@@ -1,0 +1,29 @@
+name: Security Scan with Trivy
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  security-scan:
+    name: Run Trivy Security Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Trivy
+        run: |
+          curl -sfL https://github.com/aquasecurity/trivy/releases/download/v0.31.0/trivy_0.31.0_Linux-64bit.tar.gz | tar xz
+          sudo mv trivy /usr/local/bin/
+
+      - name: Run Trivy Scan and generate report
+        run: |
+          echo "### TRIVY Security Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          trivy fs --format json --exit-code 1 . >> $GITHUB_STEP_SUMMARY
