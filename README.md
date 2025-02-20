@@ -676,7 +676,7 @@ swa deploy ./publish/wwwroot -n upt-swa-XXX --env production
 
 1. Generar y subir el diagrama de infraestructura al repositorio como lab_02.png y el reporte de metricas. (2ptos)
 
-![Diagrama de Infraestructura](https://github.com/MarceloCuadros/lab-2024-rec-si982-u3-01/blob/main/lab_02.png?raw=true)
+![Diagrama de Infraestructura](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u3-01-MarceloCuadros/blob/main/lab_02.png)
 
 <details><summary>Click to expand: Reporte de metricas</summary>
 
