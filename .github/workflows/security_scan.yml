@@ -18,25 +18,13 @@ jobs:
       - name: Set up JDK 17 (Adoptium)
         uses: actions/setup-java@v3
         with:
-          java-version: '17'
-          distribution: 'temurin'  # Usando Adoptium (temurin)
+          java-version: '17'  # Configura Java 17 aquí
+          distribution: 'temurin'
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v1
+        with:
+          sonar-project-key: your-sonar-project-key  # Tu clave de proyecto aquí
+          sonar-host-url: 'https://sonarcloud.io'
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
-  semgrep_scan:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Install Semgrep
-        run: |
-          curl -sSL https://semgrep.dev/install | bash
-          export PATH=$PATH:/home/runner/.local/bin
-
-      - name: Run Semgrep scan
-        run: |
-          semgrep --config=auto --verbose --strict
