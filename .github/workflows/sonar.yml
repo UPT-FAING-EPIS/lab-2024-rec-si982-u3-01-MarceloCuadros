@@ -19,9 +19,8 @@ jobs:
     - name: Set up SonarCloud
       uses: SonarSource/sonarcloud-github-action@v1
       with:
-        entryPoint: ./sonar-scanner
         projectBaseDir: .
-        args: >
+        args: |
           -Dsonar.projectKey=your-sonar-project-key
           -Dsonar.organization=your-sonar-organization
           -Dsonar.host.url=https://sonarcloud.io
