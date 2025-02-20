@@ -39,4 +39,4 @@ jobs:
 
       - name: Run Semgrep scan
         run: |
-          semgrep --config=auto --verbose --max-files 1000 --strict
+          semgrep --config=auto --verbose --strict
