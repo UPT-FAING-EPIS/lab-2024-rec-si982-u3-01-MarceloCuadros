@@ -675,7 +675,7 @@ swa deploy ./publish/wwwroot -n upt-swa-XXX --env production
 ## ACTIVIDADES ENCARGADAS
 
 1. Generar y subir el diagrama de infraestructura al repositorio como lab_02.png y el reporte de metricas. (2ptos)
-5. En el Visual Studio Code, crear la carpeta .github/workflows en la raiz del proyecto, seguidamente crear el archivo deploy.yml con el siguiente contenido
+
 <details><summary>Click to expand: Reporte de metricas</summary>
 
 ```Yaml
@@ -742,7 +742,7 @@ Timestamp             Name      Total
 2025-02-20T17:21:00Z  Requests  0.0
 2025-02-20T17:22:00Z  Requests  0.0
 2025-02-20T17:23:00Z  Requests  0.0
-
+</details>
 2. Realizar el escaneo del codigo de terraform utilizando TfSec o Trivy dentro del Github Action. (2ptos)
 3. En la aplicación completar con las demas funcionalidades, de crear, actualizar y eliminar (4ptos)
 4. Realizar el escaneo de vulnerabilidad con SonarCloud y Semgrep dentro del Github Action correspondiente. (2ptos)
