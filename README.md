@@ -141,6 +141,7 @@ resource "azurerm_mssql_database" "sqldb" {
   sku_name = "Free"
 }
 ```
+![InfraMain](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u3-01-MarceloCuadros/blob/main/inframain.png)
 
 3. Abrir un navegador de internet y dirigirse a su repositorio en Github, en la sección *Settings*, buscar la opción *Secrets and Variables* y seleccionar la opción *Actions*. Dentro de esta crear los siguientes secretos
 > AZURE_USERNAME: Correo o usuario de cuenta de Azure
@@ -152,6 +153,8 @@ resource "azurerm_mssql_database" "sqldb" {
 > SQL_USER: Usuario administrador de la base de datos, ejm: adminsql
 > 
 > SQL_PASS: Password del usuario administrador de la base de datos, ejm: upt.2025
+
+![Secrets and Variables](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u3-01-MarceloCuadros/blob/main/secrets and variables.png)
 
 5. En el Visual Studio Code, crear la carpeta .github/workflows en la raiz del proyecto, seguidamente crear el archivo deploy.yml con el siguiente contenido
 <details><summary>Click to expand: deploy.yml</summary>
@@ -656,9 +659,15 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https:/
 ```
 >Donde: XXX, id del azure function
 
+![ProgramCS](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u3-01-MarceloCuadros/blob/main/programcs.png)
+
 12. (Opcional) en el terminal, ubicarse en la carpeta ClienteAPI, ejecutar el comando `dotnet run` para iniciar la aplicación. Anotar el numero de puerto que aparecera: Now listening on: http://localhost:XXXX. Abrir un navegador de internet e ingresar la url: http://localhost:XXXX
+    
+![App](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u3-01-MarceloCuadros/blob/main/app.png)
 
 13. (Opcional) en el navegador de internet, hacer click en la opción de la barra de navegación para generar una Aplicación Web Progresiva (PWA), lo cual creará una aplicación de escritorio utilizando la aplicación web desarrollada.
+
+![App](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u3-01-MarceloCuadros/blob/main/app.png)
 
 14. En el Terminal, ubicarse en el directorio ShortenApp y ejecutar el siguiente comando para realizar el despliegue de la aplicación web estatica.
 ```Powershell
@@ -669,7 +678,7 @@ swa deploy ./publish/wwwroot -n upt-swa-XXX --env production
 
 15. En el Terminal, se visualizara el link de la Webapp Estatica, hacer click en el para verificar los resultados.
 
-![image](https://github.com/user-attachments/assets/463ed443-3843-44a1-95bf-c7a9aa999666)
+![App](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u3-01-MarceloCuadros/blob/main/app.png)
 
 
 ## ACTIVIDADES ENCARGADAS
@@ -678,7 +687,7 @@ swa deploy ./publish/wwwroot -n upt-swa-XXX --env production
 
 ![Diagrama de Infraestructura](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u3-01-MarceloCuadros/blob/main/lab_02.png)
 
-<details><summary>Reporte de Metricas: click aqui</summary>
+<details><summary>Reporte de Metricas: clic aqui</summary>
 
 ```Yaml
 PS C:\Users\MARCELO\Desktop\U3_LAB4\lab-2024-rec-si982-u3-01-MarceloCuadros\src\ShortenApp> az monitor metrics list --resource "/subscriptions/a451ad28-7d22-4f6b-ba2f-e69e490790b4/resourceGroups/upt-arg-206/providers/Microsoft.Web/sites/upt-afn-206" --metrics "Requests" --output table
