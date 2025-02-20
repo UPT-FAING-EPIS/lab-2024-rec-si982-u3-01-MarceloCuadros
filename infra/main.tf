@@ -15,12 +15,12 @@ variable "suscription_id" {
 
 variable "sqladmin_username" {
     type = string
-    description = "adminsql"
+    description = "Admin_sql"
 }
 
 variable "sqladmin_password" {
     type = string
-    description = "upt.2025"
+    description = "Upt*2025"
 }
 
 provider "azurerm" {
