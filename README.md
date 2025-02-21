@@ -763,5 +763,8 @@ Timestamp             Name      Total
 ![Trivy2](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u3-01-MarceloCuadros/blob/main/trivy2.png)
    
 3. En la aplicación completar con las demas funcionalidades, de crear, actualizar y eliminar (4ptos)
+
+![Crud](https://github.com/UPT-FAING-EPIS/lab-2024-rec-si982-u3-01-MarceloCuadros/blob/main/crud.png)
+   
 4. Realizar el escaneo de vulnerabilidad con SonarCloud y Semgrep dentro del Github Action correspondiente. (2ptos)
 5. Generar un Action para el despliegue de las dos aplicaciones, backend y frntend, incluyendo todo lo anterior. (4ptos)
